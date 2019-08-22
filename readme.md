@@ -8,3 +8,4 @@ Las instrucciones de algunos comandos de shell necesarios estan en el
 archivo instrucciones.txt
 
 
+[[https://github.com/dondogecl/wisdompets/blob/master/finalizado.png|alt=Screenshot]]
