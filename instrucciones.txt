@@ -1,5 +1,24 @@
 # crea proyecto "wisdompets"
 django-admin startproject wisdompets
 
+# Nota: Desde aquí en adelante hay que estar en la carpeta del proyecto
+
 # ejecutar servidor de testing
 python manage.py runserver
+
+# crear una app en el proyecto (se genera una carpeta nueva)
+python manage.py startapp adoptions
+
+# en /wisdompets/settings.py agregar una línea a INSTALLED_APPS
+'adoptions', # nombre de la app
+
+# MODELOS
+# Tipos de datos:
+IntegerField, DecimalField; CharField*, TextField*, EmailField, URLField; BooleanField, DateTimeField; ForeignKey, ManyToMany
+(*) CharField requiere indicar un máximo de caracteres, TextField no.
+# ejemplos:
+models.CharField(max_length=10, null=True, blank=True)
+# Algunos atributos:
+max_length, null, blank, default, choices...
+
+#
