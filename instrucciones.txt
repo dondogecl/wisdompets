@@ -135,3 +135,7 @@ urlpatterns = [
 ####
 ####
 
+#home.html
+<div>
+	{% for pet in pets %}
+</div>
