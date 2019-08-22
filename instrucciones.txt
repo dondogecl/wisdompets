@@ -1,0 +1,5 @@
+# crea proyecto "wisdompets"
+django-admin startproject wisdompets
+
+# ejecutar servidor de testing
+python manage.py runserver
