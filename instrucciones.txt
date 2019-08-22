@@ -43,3 +43,44 @@ python manage.py createsuperuser
 # ejecutamos testing server para iniciar sesion
 python manage.py runserver # en navegador visitar localhost:8000/admin
 
+## ORM: query data
+# en la consola
+python manage.py shell
+
+# en la shell que se inicia:
+from adoptions.models import Pet
+Pet.objects.all() # todos los objetos en la DB
+pet = Pet.objects.all()[0] # captura la primera
+pet.name # devuelve atributo 'name' de pet
+
+# Se puede lograr lo mismo con el método get()
+pet = Pet.objects.get(id=1)
+
+# cuando el get no se hace a un 'id' puede ocurrir un error al haber más de un resultado
+
+# consultar vacunas
+pet.vaccinations.all()
+#ejemplos:
+In [23]: pet2.vaccinations.all()
+Out[23]: <QuerySet []> # no tiene vacunas
+In [25]: pet3.vaccinations.all()
+Out[25]: <QuerySet [<Vaccine: Canine Parvo>, <Vaccine: Canine Distemper>, <Vaccine: Canine Rabies>, <Vaccine: Canine Leptospira>]>
+
+###
+# URL Patterns
+
+# regex ejemplos
+ducky : exactamente ducky
+\d : 1 dígito numérico
+\d+ : 1 o más dígitos
+^admin/ : cualquier cadena que comience con "admin" /admin1313/index
+suffix$ : cualquier cadena que termine en "suffix" /admin1313suffix
+^$ : una cadena vacía
+
+# recurso: https://pythex.org
+
+# ejemplo en urlpattern del root '/' que se interpreta como vacío
+$ urlpatterns = [
+    url(r'^$', views.home, name='index'),
+]
+
