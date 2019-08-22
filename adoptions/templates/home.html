@@ -1,1 +1,16 @@
-Inicio
+<div>
+    {% for pet in pets %}
+    <div class="petname">
+        <a href="#">
+            <h3>{{ pet.name|capfirst }}</h3>
+        </a>
+        <p>{{ pet.species }}</p>
+        {% if pet.breed %}
+            <p>Breed: {{ pet.breed }}</p>
+        {% endif %}
+        <p class="hidden">{{ pet.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- plantilla de pagina de incio que muestra todas las mascotas -->

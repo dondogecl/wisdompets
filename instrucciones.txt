@@ -79,8 +79,59 @@ suffix$ : cualquier cadena que termine en "suffix" /admin1313suffix
 
 # recurso: https://pythex.org
 
-# ejemplo en urlpattern del root '/' que se interpreta como vacío
+# ejemplo en urlpattern 
 $ urlpatterns = [
-    url(r'^$', views.home, name='index'),
+    url(r'^$', views.home, name='index'), #root '/' que se interpreta como vacío
+    url(r'^adoptions/?(\d+)/', views.pet_detail, name='pet_detail'), # vista del nro de pet escogido y retorna la vista pet
 ]
+
+# url pattern
+
+### TEMPLATES
+
+# Sintaxis:
+1) {{ variable }}
+<h3>{{ pet.name }}</h3>
+2) {% tag %}
+{% for p in pets %}
+    <li>{{ p.name }}</li>
+{% endfor %}
+3) {{ variable|filter }}
+<h3>{{ pet.name|capfirst }}</h3> # Primera letra en mayuscula
+
+# Url Tag
+urlpatterns = [
+    url(r'^$', views.home, home='index'),
+    url(r'^pets/(\d+)/$', views.pet_detail, name='pet_detail'),
+]
+{% url 'pet_detail' pet.id %}
+
+# Ejemplo completo:
+<ul>
+    {% for pet in pets %}
+        <li>
+            <a href="{% url 'pet_detail' pet.id %}">
+                {{ pet.name|capfirst }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+# inheritance
+#base.html:
+<html>
+  <head>
+  </head>
+  <body>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>
+#index.html:
+{% extends "base.html" %}
+  {% block content %}
+    <h3>Animals available for adoption</h3>
+  {% endblock content }
+####
+####
 
