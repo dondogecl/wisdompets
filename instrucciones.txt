@@ -21,4 +21,25 @@ models.CharField(max_length=10, null=True, blank=True)
 # Algunos atributos:
 max_length, null, blank, default, choices...
 
-#
+####
+# MIGRACIONES
+
+# Comandos: Crear migración
+python manage.py makemigrations #crear
+
+# consultar migraciones
+python manage,py showmigrations
+
+# Ejecutar migración
+python manage.py migrate #ejecutar
+
+# Se copio carpeta management/ dentro de adoptions/ con un script de importacion CSV -> SQL
+python manage.py load_pet_data
+
+# Luego de crear una clase en admin.py ...
+# crear super usuario
+python manage.py createsuperuser
+
+# ejecutamos testing server para iniciar sesion
+python manage.py runserver # en navegador visitar localhost:8000/admin
+
