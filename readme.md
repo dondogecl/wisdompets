@@ -1,4 +1,5 @@
-Proyecto basico de Django del tutorial de Caleb Smith en Linkedin 
+#Proyecto basico de Django 
+del tutorial de Caleb Smith en Linkedin 
 Learning
 
 URL: 
@@ -8,4 +9,4 @@ Las instrucciones de algunos comandos de shell necesarios estan en el
 archivo instrucciones.txt
 
 
-[[https://github.com/dondogecl/wisdompets/blob/master/finalizado.png|alt=Screenshot]]
+![alt text](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
